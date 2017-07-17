@@ -1,4 +1,4 @@
-# Red-Pure-Stars
+# Pure-Red-Stars
 
 An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme), [Purity](https://github.com/therealklanni/purity), and [CJT](https://github.com/christoomey/dotfiles/blob/77fb4084bd3f207aace80aa93a49769a6a298ddb/zsh/cjt.zsh-theme). A shell theme for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
