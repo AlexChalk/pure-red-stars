@@ -6,10 +6,25 @@ An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/mast
 
 ## Installation
 
-The following assumes a working installation of Z Shell and oh-my-zsh:
+The following assumes a working installation of Z Shell and either oh-my-zsh or zplug:
 
-1. Copy `pure-red-stars.zsh-theme` into the `~/.oh-my-zsh/custom` directory.
-2. Add the following to your `.zshrc`: `ZSH_THEME="pure-red-stars"`
+1. For oh-my-zsh:
+   * Copy `pure-red-stars.zsh-theme` into the `~/.oh-my-zsh/custom` directory.
+   * Add the following to your `.zshrc`: `ZSH_THEME="pure-red-stars"`.
+   * Restart your shell.
+
+2. For zplug:
+   * Source the [oh-my-zsh git script](https://github.com/robbyrussell/oh-my-zsh/blob/e273cf004e1ff0510aee61416885f3003bcd15d9/lib/git.zsh) in your zshrc (`source ~/path/to/omz-git-script.zsh`).
+   * Add `pure-red-stars` to your zplug plugins list:
+   
+     ```
+     source ~/.zplug/init.zsh
+     ...other plugins....
+     zplug "adc17/pure-red-stars", as:theme
+     zplug load
+     ```
+   * Restart your shell and run `zplug install`.
+   * If you don't see the theme, restart your shell again.
 
 ## Features
 
