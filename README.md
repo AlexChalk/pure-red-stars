@@ -1,6 +1,6 @@
 # Pure-Red-Stars
 
-An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme), [Purity](https://github.com/therealklanni/purity), and [CJT](https://github.com/christoomey/dotfiles/blob/77fb4084bd3f207aace80aa93a49769a6a298ddb/zsh/cjt.zsh-theme). A shell theme for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/fishy.zsh-theme), [Purity](https://github.com/therealklanni/purity), and [CJT](https://github.com/christoomey/dotfiles/blob/77fb4084bd3f207aace80aa93a49769a6a298ddb/zsh/cjt.zsh-theme).
 
 ![screenshot-of-prompt](http://i.imgur.com/CgEfHVy.png)
 
@@ -25,6 +25,11 @@ The following assumes a working installation of Z Shell and either oh-my-zsh or 
    * Source the [oh-my-zsh git script](https://github.com/robbyrussell/oh-my-zsh/blob/e273cf004e1ff0510aee61416885f3003bcd15d9/lib/git.zsh) in your zshrc (`source ~/path/to/omz-git-script.zsh`). It's important that you place this *after* your zplug code.
    * Restart your shell and run `zplug install`.
    * If you don't see the theme, restart your shell again.
+
+3. For antibody:
+  * Source the same oh-my-zsh git script you need for zplug.
+  * Add `setop prompt_subst` to your zshrc.
+  * Follow antibody installation instructions.
 
 ## Features
 
