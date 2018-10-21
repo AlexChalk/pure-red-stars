@@ -6,8 +6,6 @@ An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/mast
 
 ## Installation
 
-The following assumes a working installation of Z Shell and either oh-my-zsh or zplug:
-
 1. For oh-my-zsh:
    * Copy `pure-red-stars.zsh-theme` into the `~/.oh-my-zsh/custom` directory.
    * Add the following to your `.zshrc`: `ZSH_THEME="pure-red-stars"`.
