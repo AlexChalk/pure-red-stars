@@ -25,9 +25,9 @@ An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/mast
    * If you don't see the theme, restart your shell again.
 
 3. For antibody:
-  * Source the same oh-my-zsh git script you need for zplug.
-  * Add `setop prompt_subst` to your zshrc.
-  * Follow antibody installation instructions.
+   * Source the same oh-my-zsh git script you need for zplug.
+   * Add `setopt prompt_subst` to your zshrc.
+   * Follow the usual antibody plugin install process.
 
 ## Features
 
