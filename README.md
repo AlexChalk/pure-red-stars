@@ -20,14 +20,16 @@ An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/mast
      zplug "adc17/pure-red-stars", as:theme
      zplug load
      ```
-   * Source the [oh-my-zsh git script](https://github.com/robbyrussell/oh-my-zsh/blob/e273cf004e1ff0510aee61416885f3003bcd15d9/lib/git.zsh) in your zshrc (`source ~/path/to/omz-git-script.zsh`). It's important that you place this *after* your zplug code.
    * Restart your shell and run `zplug install`.
    * If you don't see the theme, restart your shell again.
 
 3. For antibody:
-   * Source the same oh-my-zsh git script you need for zplug.
    * Add `setopt prompt_subst` to your zshrc.
    * Follow the usual antibody plugin install process.
+
+4. For zplugin:
+   * Add `setopt prompt_subst` to your zshrc.
+   * Source like this: `zplugin light adc17/pure-red-stars`.
 
 ## Features
 
