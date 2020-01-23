@@ -49,6 +49,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %F{white}[%F{yellow}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
 
+
 # prompt turns red if the previous command didn't exit with 0
 PROMPT='%F{magenta}$sshing% %F{green}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)$(_git_prompt_short_sha) $(_parse_git_dirty)%(?.%F{blue}.%F{red})❯% %(?.%F{yellow}.%F{red})❯%(?.%F{green}.%F{red})❯%f '
 RPROMPT='%F{blue}$(_fishy_collapsed_wd)%'
