@@ -2,19 +2,19 @@
 
 # Only display host if this is via SSH
 if [[ -n $SSH_CONNECTION ]]; then
-    sshing="%m "
+  sshing="%m "
 else
-    sshing=""
+  sshing=""
 fi
 
 # Fish shell-like prompt
 _fishy_collapsed_wd() {
   echo $(pwd | perl -pe '
-      BEGIN {
-      binmode STDIN,  ":encoding(UTF-8)";
-      binmode STDOUT, ":encoding(UTF-8)";
-      }; s|^$ENV{HOME}|~|g; s|/([^/.])[^/]*(?=/)|/$1|g; s|/\.([^/])[^/]*(?=/)|/.$1|g
-      ')
+    BEGIN {
+    binmode STDIN,  ":encoding(UTF-8)";
+    binmode STDOUT, ":encoding(UTF-8)";
+    }; s|^$ENV{HOME}|~|g; s|/([^/.])[^/]*(?=/)|/$1|g; s|/\.([^/])[^/]*(?=/)|/.$1|g
+    ')
 }
 
 _parse_git_dirty() {
@@ -40,14 +40,14 @@ _git_prompt_short_sha() {
 }
 
 # Git prompt values
-    ZSH_THEME_GIT_PROMPT_PREFIX=""
-    ZSH_THEME_GIT_PROMPT_SUFFIX=""
-    ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}✶✶%f"
-    ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}✶✶%f"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
-    ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %F{white}[%F{yellow}"
-    ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %F{white}[%F{yellow}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
 
 # prompt turns red if the previous command didn't exit with 0
 
