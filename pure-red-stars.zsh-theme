@@ -28,26 +28,24 @@ _parse_git_dirty() {
     STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
   fi
   if [[ -n $STATUS ]]; then
-    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+    echo "$PRS_ZSH_THEME_GIT_PROMPT_DIRTY"
   else
-    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+    echo "$PRS_ZSH_THEME_GIT_PROMPT_CLEAN"
   fi
 }
 
 _git_prompt_short_sha() {
   local SHA
-  SHA=$(command git rev-parse --short HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
+  SHA=$(command git rev-parse --short HEAD 2> /dev/null) && echo "$PRS_ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$PRS_ZSH_THEME_GIT_PROMPT_SHA_AFTER"
 }
 
 # Git prompt values
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}✶✶%f"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
+PRS_ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}✶✶%f"
+PRS_ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %F{white}[%F{yellow}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
+PRS_ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %F{white}[%F{yellow}"
+PRS_ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
 
 # prompt turns red if the previous command didn't exit with 0
 PROMPT=' %(?.%F{blue}.%F{red})❯% %(?.%F{yellow}.%F{red})❯%(?.%F{green}.%F{red})❯%f '
