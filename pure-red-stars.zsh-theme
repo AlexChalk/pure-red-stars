@@ -40,7 +40,7 @@ _git_prompt_short_sha() {
 }
 
 # Git prompt values
-PRS_ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}✶✶%f"
+PRS_ZSH_THEME_GIT_PROMPT_DIRTY="%F{red} ✶✶%f"
 PRS_ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
@@ -49,4 +49,4 @@ PRS_ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
 
 # prompt turns red if the previous command didn't exit with 0
 PROMPT=' %(?.%F{blue}.%F{red})❯% %(?.%F{yellow}.%F{red})❯%(?.%F{green}.%F{red})❯%f '
-RPROMPT='%F{blue}$(_fishy_collapsed_wd)%  $(_parse_git_dirty)$(_git_prompt_short_sha) %F{green}$(git rev-parse --abbrev-ref HEAD 2> /dev/null) %F{magenta}$sshing%'
+RPROMPT='%F{blue}$(_fishy_collapsed_wd)% $(_parse_git_dirty)$(_git_prompt_short_sha) %F{green}$(git rev-parse --abbrev-ref HEAD 2> /dev/null) %F{magenta}$sshing%'
