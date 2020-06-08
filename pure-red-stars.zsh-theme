@@ -2,19 +2,19 @@
 
 # Only display host if this is via SSH
 if [[ -n $SSH_CONNECTION ]]; then
-  sshing="%m "
+    sshing="%m "
 else
-  sshing=""
+    sshing=""
 fi
 
 # Fish shell-like prompt
 _fishy_collapsed_wd() {
   echo $(pwd | perl -pe '
-   BEGIN {
+      BEGIN {
       binmode STDIN,  ":encoding(UTF-8)";
       binmode STDOUT, ":encoding(UTF-8)";
-   }; s|^$ENV{HOME}|~|g; s|/([^/.])[^/]*(?=/)|/$1|g; s|/\.([^/])[^/]*(?=/)|/.$1|g
-')
+      }; s|^$ENV{HOME}|~|g; s|/([^/.])[^/]*(?=/)|/$1|g; s|/\.([^/])[^/]*(?=/)|/.$1|g
+      ')
 }
 
 _parse_git_dirty() {
@@ -28,25 +28,26 @@ _parse_git_dirty() {
     STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
   fi
   if [[ -n $STATUS ]]; then
-    echo "$PRS_ZSH_THEME_GIT_PROMPT_DIRTY"
+    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
   else
-    echo "$PRS_ZSH_THEME_GIT_PROMPT_CLEAN"
+    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
   fi
 }
 
 _git_prompt_short_sha() {
   local SHA
-  SHA=$(command git rev-parse --short HEAD 2> /dev/null) && echo "$PRS_ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$PRS_ZSH_THEME_GIT_PROMPT_SHA_AFTER"
+  SHA=$(command git rev-parse --short HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
 }
 
 # Git prompt values
-PRS_ZSH_THEME_GIT_PROMPT_DIRTY="%F{red} ✶✶%f"
-PRS_ZSH_THEME_GIT_PROMPT_CLEAN=""
+    ZSH_THEME_GIT_PROMPT_PREFIX=""
+    ZSH_THEME_GIT_PROMPT_SUFFIX=""
+    ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}✶✶ %f"
+    ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
-PRS_ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %F{white}[%F{yellow}"
-PRS_ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
+    ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %F{white}[%F{yellow}"
+    ZSH_THEME_GIT_PROMPT_SHA_AFTER="%F{white}]"
 
 # prompt turns red if the previous command didn't exit with 0
-PROMPT='%F{blue}$(_fishy_collapsed_wd)%  %(?.%F{blue}.%F{red})❯% %(?.%F{yellow}.%F{red})❯%(?.%F{green}.%F{red})❯%f '
-RPROMPT='$(_parse_git_dirty)$(_git_prompt_short_sha) %F{green}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%F{magenta}$sshing%'
+    PROMPT='%F{magenta}$sshing% %F{blue}$(_fishy_collapsed_wd)%  %F{green}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)$(_git_prompt_short_sha) $(_parse_git_dirty)%(?.%F{green}.%F{red})❯%f '
