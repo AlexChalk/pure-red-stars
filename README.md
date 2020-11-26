@@ -17,7 +17,7 @@ An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/mast
      ```
      source ~/.zplug/init.zsh
      ...other plugins....
-     zplug "adc17/pure-red-stars", as:theme
+     zplug "AlexChalk/pure-red-stars", as:theme
      zplug load
      ```
    * Restart your shell and run `zplug install`.
@@ -29,7 +29,7 @@ An unholy merging of [Fishy](https://github.com/robbyrussell/oh-my-zsh/blob/mast
 
 4. For zplugin:
    * Add `setopt prompt_subst` to your zshrc.
-   * Source like this: `zplugin light adc17/pure-red-stars`.
+   * Source like this: `zplugin light AlexChalk/pure-red-stars`.
 
 ## Features
 
